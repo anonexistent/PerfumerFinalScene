@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>icon50.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\13bb.jpg" />
+    <None Remove="Resources\300x400.png" />
+    <None Remove="Resources\691.jpg" />
+    <None Remove="Resources\Gabka-do.png" />
+    <None Remove="Resources\graphic-catalog.png" />
+    <None Remove="Resources\icon50.ico" />
+    <None Remove="Resources\j_lqasli650.jpg" />
+    <None Remove="Resources\png-default-user-photo.png" />
+    <None Remove="Resources\Qc1djwuxqS8.jpg" />
+    <None Remove="Resources\question-mark.png" />
+    <None Remove="Resources\R1d2jwuxqS8.jpg" />
+    <None Remove="Resources\resize.jpg" />
+    <None Remove="Resources\small_pomada.jpg" />
+    <None Remove="Resources\small_rymyana_cargo_cosmetics_10.jpg" />
+    <None Remove="Resources\transparent-plant-ivy-tree.png" />
+    <None Remove="Resources\v1xjtmQ7aFU.jpg" />
+    <None Remove="Resources\zamena.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="icon50.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.18" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\13bb.jpg" />
+    <Resource Include="Resources\300x400.png" />
+    <Resource Include="Resources\691.jpg" />
+    <Resource Include="Resources\Gabka-do.png" />
+    <Resource Include="Resources\graphic-catalog.png" />
+    <Resource Include="Resources\icon50.ico" />
+    <Resource Include="Resources\j_lqasli650.jpg" />
+    <Resource Include="Resources\png-default-user-photo.png" />
+    <Resource Include="Resources\Qc1djwuxqS8.jpg" />
+    <Resource Include="Resources\question-mark.png" />
+    <Resource Include="Resources\R1d2jwuxqS8.jpg" />
+    <Resource Include="Resources\resize.jpg" />
+    <Resource Include="Resources\small_pomada.jpg" />
+    <Resource Include="Resources\small_rymyana_cargo_cosmetics_10.jpg" />
+    <Resource Include="Resources\transparent-plant-ivy-tree.png" />
+    <Resource Include="Resources\v1xjtmQ7aFU.jpg" />
+    <Resource Include="Resources\zamena.jpg" />
+  </ItemGroup>
+
+</Project>

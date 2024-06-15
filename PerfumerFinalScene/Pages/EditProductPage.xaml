@@ -1,0 +1,61 @@
+﻿<Page x:Class="PerfumerFinalScene.Pages.EditProductPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PerfumerFinalScene.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="EditProductPage">
+
+    <Grid Background="#FFFEADBE">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.ColumnSpan="100" Grid.RowSpan="100" Source="/Resources/v1xjtmQ7aFU.jpg" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+        <Button HorizontalAlignment="Left" FontSize="28" Padding="5 0" VerticalAlignment="Top" Margin="5" Content="↩" Click="Button_Click"/>
+
+        <TextBlock Text="Добавление продукта" Margin="0 15" Grid.ColumnSpan="3" TextAlignment="Center" Opacity="0.9" VerticalAlignment="Bottom" FontSize="34" FontWeight="UltraBlack" Background="#FFE8E8E8"/>
+
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="3" Margin="10" Background="OldLace" VerticalAlignment="Center" Opacity="0.9">
+            <TextBlock Text="Наименование" FontSize="18" Margin="10"/>
+            <TextBox x:Name="tbFirst" FontSize="22" Margin="5"/>
+            <TextBlock Text="Цена" FontSize="18" Margin="10"/>
+            <TextBox x:Name="tbPrice" FontSize="22" Margin="5"/>
+            <TextBlock Text="Разновидность" FontSize="18" Margin="10"/>
+            <ComboBox x:Name="cbType" FontSize="24" Margin="5">
+                <ComboBoxItem Content="cosmetic" IsSelected="True"/>
+                <ComboBoxItem Content="perfume"/>
+                <ComboBoxItem Content="other"/>
+            </ComboBox>
+
+            <Button x:Name="btnAddNew" Content="Добавить" FontSize="24" Margin="15" Click="btnAddNew_Click"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" VerticalAlignment="Center">
+            <Image x:Name="image" Source="/Resources/question-mark.png" MaxHeight="100" MaxWidth="100"/>
+            <Button Content="Изменить изображение" FontSize="18" Margin="5" Click="Button_Click_1"/>
+        </StackPanel>
+
+
+    </Grid>
+</Page>

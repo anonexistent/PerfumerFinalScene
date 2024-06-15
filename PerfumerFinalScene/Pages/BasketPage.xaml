@@ -1,0 +1,115 @@
+﻿<Page x:Class="PerfumerFinalScene.Pages.BasketPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PerfumerFinalScene.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="900" d:DesignWidth="800"
+      Title="BasketPage">
+
+    <ScrollViewer VerticalScrollBarVisibility="Visible">
+        <Grid Background="#FFCFFFA0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel VerticalAlignment="Top" Grid.ColumnSpan="3" Margin="5">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Content="🛒" FontSize="26" ToolTip="basket" Margin="5"/>
+                    <Button Content="👤" FontSize="26" ToolTip="profile" Margin="5" Click="Button_Click_0"/>
+                    <Button Content="🚪" FontSize="26" ToolTip="exit" Margin="5" Click="Button_Click_1"/>
+                </StackPanel>
+
+            </StackPanel>
+
+            <StackPanel Grid.ColumnSpan="3">
+                <Button Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnGoBack_Click">
+                    <TextBlock Grid.ColumnSpan="3" Margin="10" Background="#FF90E0C8" Text="    ДОМОЙ  " Padding="40 10" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="22" FontWeight="Black">
+                        <TextBlock.Effect>
+                            <DropShadowEffect Color="#FF65FF65" BlurRadius="15" Direction="90" ShadowDepth="5"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                </Button>
+
+                <TextBlock Grid.ColumnSpan="3" Margin="5" Background="#FFFFE640" Text="Корзина" Padding="5 0" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="18" FontWeight="Black">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="#FFFFE640" BlurRadius="25" Direction="90" ShadowDepth="10"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+            </StackPanel>
+
+            <Button x:Name="btnEmptyBasket" Margin="20 0" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3" Background="#FFC3E090" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="15 0" Click="btnEmptyBasket_Click">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Корзина пуста. Хотите изменить это?" FontSize="24" TextWrapping="Wrap" TextAlignment="Center" />
+                    <Image Source="/Resources/graphic-catalog.png" MaxHeight="200" MaxWidth="300" Margin="5"/>
+                    <TextBlock Text="Посетить каталог" FontSize="20" TextAlignment="Center" />
+                </StackPanel>
+            </Button>
+
+            <ListBox x:Name="lbCatalog" Visibility="Collapsed" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3" Background="#FFC3E090"  Margin="20 10" SelectionChanged="lbCatalog_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="5">
+                            <Image Width="100" Height="75" Source="{Binding Path=description}"/>
+                            <TextBlock FontSize="16" Text="{Binding Path=name}" HorizontalAlignment="Center" />
+                            <TextBlock FontSize="16" Text="{Binding Path=price}" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                
+                <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            </ListBox>
+
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="3" Margin="15" Background="#FFE8E8B3">
+                <StackPanel Margin="20 5">
+                    <TextBlock Text="Выберите способ оплаты:" Padding="20 0" Margin="20 0" FontSize="22"/>
+                    <ComboBox x:Name="cbPay" FontSize="20" DisplayMemberPath="name"/>
+                </StackPanel>
+                
+                <StackPanel Margin="20 5">
+                    <TextBlock Text="Выберите адрес получения:" Padding="20 0" Margin="20 0" FontSize="22"/>
+                    <ComboBox x:Name="cbShop" FontSize="20" DisplayMemberPath="location"/>
+                </StackPanel>
+                
+            </StackPanel>
+            
+            <UniformGrid Columns="2" Rows="4" Margin="10" Grid.Row="4" Grid.ColumnSpan="2" Background="White">
+                <TextBlock Text="персональная скидка............" FontSize="22" VerticalAlignment="Center" Padding="10"/>
+                <TextBlock Text="-0.0" FontSize="28" Foreground="Red" VerticalAlignment="Center" />
+                <TextBlock Text="всеобщая скидка..................." FontSize="22" VerticalAlignment="Center"  Padding="10"/>
+                <TextBlock Text="-0.0" FontSize="28" Foreground="Red" VerticalAlignment="Center" />
+                <TextBlock Text="стоимость доставки....................." FontSize="22" VerticalAlignment="Center"  Padding="10"/>
+                <TextBlock x:Name="tbDel" Text="100.0" FontSize="28" Foreground="Green" VerticalAlignment="Center" />
+
+            </UniformGrid>
+
+            <StackPanel Grid.Row="4" Grid.Column="2" Margin="5" Background="AntiqueWhite">
+
+                <StackPanel VerticalAlignment="Center">                    
+                    <TextBlock Text="total:" FontSize="32" Margin="5 0"/>
+                    <TextBlock x:Name="tbTotalMoney" Text="0.00" Background="#FFFFF4E5" FontWeight="Bold" FontSize="36" Padding="5" Margin="10"/>
+                    <Button Content="send order" FontSize="24" Margin="5" Click="Send_Click"/>
+                </StackPanel>
+            </StackPanel>
+
+            <TextBlock Margin="3" FontSize="16" TextWrapping="Wrap" Grid.Row="5" Grid.ColumnSpan="3" Text="© 2009-2024 . Официальный сайт Государственного автономного профессионального образовательного учреждения 'Оренбургский колледж экономики и информатики'" VerticalAlignment="Bottom" Background="AliceBlue" TextAlignment="Center"/>
+        </Grid>
+
+    </ScrollViewer>
+
+</Page>

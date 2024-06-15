@@ -1,0 +1,78 @@
+﻿<Page x:Class="PerfumerFinalScene.Pages.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PerfumerFinalScene.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="HomePage">
+
+    <ScrollViewer VerticalScrollBarVisibility="Visible">
+        <Grid Background="Honeydew">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.ColumnSpan="3" Grid.RowSpan="4" Source="/Resources/resize.jpg" Stretch="UniformToFill" />
+
+            <StackPanel VerticalAlignment="Top" Grid.ColumnSpan="3" Margin="5">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="btnAdd" Content="✏️" Padding="3" FontSize="26" ToolTip="system" Margin="5" Click="btnAdd_Click"/>
+                    <Button x:Name="btnBasket" Content="🛒" FontSize="26" ToolTip="basket" Margin="5" Click="btnBasket_Click"/>
+                    <Button Content="👤" FontSize="26" ToolTip="profile" Margin="5" Click="Button_Click"/>
+                    <Button Content="🚪" Padding="3" FontSize="26" ToolTip="exit" Margin="5" Click="Button_Click_1"/>
+                </StackPanel>
+
+            </StackPanel>
+
+            <TextBlock Grid.ColumnSpan="3" Margin="20" Background="#FF65FF65" Text="    AROMAS  " Padding="40 10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32" FontWeight="Black">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="#FF65FF65" BlurRadius="25" Direction="90" ShadowDepth="10"/>
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <TextBlock Visibility="Collapsed" Grid.Row="1" Grid.ColumnSpan="3" FontSize="30" TextWrapping="Wrap" Margin="25" Background="#7FFF69B4" Padding="10" Text="&#x2014; Лэтуаль Российская торговая сеть Российская торговая сеть по продаже косметики и парфюмерии. Сетью «Лэтуаль» управляет компания «Алькор и Ко», принадлежащая кипрскому офшору Letu Holdings. Википедия Дата основания: 1997 год Количество сотрудников: 12 513 Сайт: letu.ru Владельцы и руководство: Ву Куанг Хай Сфера деятельности: продажа косметики и парфюмерии">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="HotPink"/>
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <StackPanel Grid.Row="2" Grid.ColumnSpan="3" Background="#FFD8B69B" Margin="10" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Image Source="/Resources/Qc1djwuxqS8.jpg" Margin="25" MaxHeight="600" MaxWidth="350">
+                </Image>
+
+                <StackPanel Background="#FFD6B292">
+                    <TextBlock Text="AROMAS" FontSize="34" FontWeight="Black" Margin="20" Background="#FFD1A888" Padding="15 0"/>
+                    <TextBlock Text="«элитная парфюмериям косметика»"  FontSize="22" Margin="10 0">
+                    </TextBlock>
+
+                    <Button HorizontalAlignment="Center" VerticalAlignment="Center" Padding="15 0" Margin="10" Click="Button_Click_2" Background="Transparent">
+                        <StackPanel Orientation="Vertical" Background="AliceBlue" Margin="5">
+
+                            <TextBlock Text="🛍️" FontSize="124" Background="#FFD4B7A5" Margin="5"/>
+                            <TextBlock Text="Каталог" FontSize="18" TextAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+                <!--<Button Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="15 0" Background="Transparent">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="/Resources/691.jpg" MaxHeight="300" MaxWidth="350"/>
+                        <TextBlock Text="dogalog" FontSize="18" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>-->
+            </StackPanel>
+
+            <TextBlock Margin="3" FontSize="16" TextWrapping="Wrap" Text="© 2009-2024 . Официальный сайт Государственного автономного профессионального образовательного учреждения 'Оренбургский колледж экономики и информатики'" Grid.Row="3" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Background="AliceBlue" TextAlignment="Center"/>
+        </Grid>
+    </ScrollViewer>
+</Page>

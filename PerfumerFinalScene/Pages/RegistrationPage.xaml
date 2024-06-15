@@ -1,0 +1,36 @@
+﻿<Page x:Class="PerfumerFinalScene.Pages.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PerfumerFinalScene.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="800"
+      Title="RegistrationPage">
+
+    <Grid Background="#FF80161B">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <Image Source="/Resources/R1d2jwuxqS8.jpg" Grid.RowSpan="2" HorizontalAlignment="Right" MaxHeight="500" Opacity="0.6"/>
+
+        <TextBlock Background="GhostWhite" Text="  еще не на системе ??  " Grid.ColumnSpan="3" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="Black">
+            <TextBlock.Effect>
+                <DropShadowEffect BlurRadius="26" Direction="180" Opacity="0.75" RenderingBias="Performance" ShadowDepth="5" Color="#FF00D6FF"/>
+            </TextBlock.Effect>
+        </TextBlock>
+
+        <StackPanel Margin="15" Grid.Row="1" Background="#BFFFE0B7">
+            <TextBlock Text="Логин" FontSize="28"/>
+            <TextBox x:Name="tbLogin" Margin="5" FontSize="22"/>
+            <TextBlock Text="Пароль" FontSize="28"/>
+            <PasswordBox x:Name="tbPass" Margin="5" FontSize="22"/>
+            <TextBlock Text="Повторить пароль" FontSize="28"/>
+            <PasswordBox x:Name="tbPass2" Margin="5" FontSize="22"/>
+            <Button x:Name="btnIn" Content="Создать аккаунт" FontSize="24" Margin="15" Click="btnIn_Click"/>
+            <Button x:Name="btnUp" Content="Я уже систематизирован" Margin="10 0" FontSize="28" Click="btnUp_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
